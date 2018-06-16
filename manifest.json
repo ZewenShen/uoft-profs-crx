@@ -2,7 +2,7 @@
 	"manifest_version": 2,
 	"name": "UofT Profs",
 	"version": "0.1",
-	"description": "This extension links 'Analyze your Professor' to the browser.",
+	"description": "This extension links 'Analyze your Professor' to the browser. Made for UofT undergraduate students.",
 	"icons": {
 		"128": "icon128.png",
 		"48": "icon48.png",
@@ -12,14 +12,6 @@
 		"default_icon": "icon16.png",
 		"default_popup": "popup.html"
 	},
-
-	// "options_page": "options.html",
-
-	// "background": {
-	// 	"scripts": ["eventPage.js"],
-	// 	"persistent": false
-	// },
-
 	"permissions": [
 		"notifications",
 		"tabs"

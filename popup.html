@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Hello World</title>
+	<!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    
+    <!-- Google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+
+   	<link rel="stylesheet" href='./popup.css'>
+
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+	<script src="jquery-3.3.1.min.js"></script>
+	<script src="popup.js"></script>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<div class="container">
+		<h4>Analyze Your Professor!</h4>
+		<form>
+		  <div class="form-row align-items-center">
+		    <div class="col-sm-4 my-1 ui-widget">
+		      <label class="sr-only" for="inlineFormInputName">Name</label>
+		      <input type="text" class="form-control" id="inlineFormInputName"
+			  name="instructor" pattern="[A-Za-z\s]*" title= "Full name of the instructor (case sensitive)" placeholder="Instructor full name (e.g., David Liu)" required>
+		    </div>
+		    <div class="col-sm-4 my-1">
+		      <label class="sr-only" for="inlineFormInputGroupUsername">CourseID</label>
+		      <div class="input-group">
+			<div class="input-group-prepend">
+			  <div class="input-group-text">@</div>
+			</div>
+			<input type="text" class="form-control" id="inlineFormInputGroupUsername" name="course" pattern="[A-Z]{3}(|\d{3})" title="begins with 3 captital letters, ends with 3 numbers" placeholder="Course ID (e.g., CSC148)" required>
+		      </div>
+		    </div>
+			<br>
+			<div id="submit_button">
+				<select name="campus" id="university">
+					<option value="St. George">St. George</option>
+					<option value="Mississauga">Mississauga</option>
+				</select>
+			    <span class="col-auto my-1">
+			      <button type="submit" class="btn btn-primary" id="btn">Submit</button>
+			    </span>
+			</div>
+		  </div>
+		</form>
+	</div>
+</body>
+</html>

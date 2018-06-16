@@ -1,0 +1,8 @@
+body {
+    min-width: 300px;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+#submit_button {
+	margin: auto;
+}

@@ -1,19 +1,26 @@
 {
 	"manifest_version": 2,
 	"name": "UofT Profs",
-	"version": "0.1",
+	"version": "0.2",
 	"description": "This extension links 'Analyze your Professor' to the browser. Made for UofT undergraduate students.",
 	"icons": {
-		"128": "icon128.png",
-		"48": "icon48.png",
-		"16": "icon16.png"
+		"128": "img/icon128.png",
+		"48": "img/icon48.png",
+		"16": "img/icon16.png"
 	},
 	"browser_action": {
-		"default_icon": "icon16.png",
+		"default_icon": "img/icon16.png",
 		"default_popup": "popup.html"
 	},
+	"content_scripts": [
+		{
+			"matches": ["https://acorn.utoronto.ca/*"],
+			"js": ["jquery-3.3.1.min.js", "content.js"]
+		}
+	],
 	"permissions": [
 		"notifications",
-		"tabs"
+		"tabs",
+		"https://acorn.utoronto.ca/*"
 	]
 }

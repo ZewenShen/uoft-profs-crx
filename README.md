@@ -9,6 +9,6 @@ A chrome extension which links "Analyze Your Professor" to user's browser
 https://chrome.google.com/webstore/detail/uoft-profs/olojdnpfailkhfoimaddolpmeilcdong
 
 ## Demos
-![dialog](https://github.com/Walden-Shen/uoft-profs-crx/blob/master/examples/images/1.png?raw=true)
+![dialog](https://raw.githubusercontent.com/Walden-Shen/uoft-profs-crx/master/examples/1.png)
 
-![courselist](https://github.com/Walden-Shen/uoft-profs-crx/blob/master/examples/images/2.png?raw=true)
+![courselist](https://raw.githubusercontent.com/Walden-Shen/uoft-profs-crx/master/examples/2.png)

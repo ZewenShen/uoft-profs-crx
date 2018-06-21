@@ -18,10 +18,15 @@ function setCourseList() {
 		var courseID = courseIDFull.substring(0, courseIDFull.length - 2);
 		var campusID = courseIDFull[courseIDFull.length - 1];
 		var instructorSelector = $('.instructor > .instructorDetails', $(this));
-		var instructor = instructorSelector.html();
-		if (instructor.indexOf('href') == -1 && instructor != "TBA" && /^[A-Z]{3}\d{3}$/.test(courseID)) {
+		var instructors = instructorSelector.html();
+		if (instructors.indexOf('href') == -1 && instructors != "TBA" && /^[A-Z]{3}\d{3}$/.test(courseID)) {
 			var campus = (campusID == 1) ? "St. George": "Mississauga";
-    		instructorSelector.html("<a href='" + encodeURI("http://uoftprofs.com/?" + "instructor=" + instructor + "&course=" + courseID + "&campus=" + campus) + "'>" + instructor + "</a>");
+			var instructorList = instructors.split(', ');
+			var aArray = new Array(instructorList.length);
+			instructorList.forEach(function(instructor) {
+				aArray.push("<a href='" + encodeURI("http://uoftprofs.com/?" + "instructor=" + instructor + "&course=" + courseID + "&campus=" + campus) + "'>" + instructor + "</a>");
+			})
+    		instructorSelector.html(aArray.reduce(function(x, y) {return x + ', ' + y;}));
 		}
 	});
 }
@@ -32,10 +37,15 @@ function setCourseDialog() {
 	var courseID = courseIDFull.substring(0, courseIDFull.length - 2);
 	var campusID = courseIDFull[courseIDFull.length - 1];
 	$('.searchResults > .primaryActivity > .activityRow > .instructor > .instructorDetails').each(function() {
-		var instructor = $(this).html();
-		if (instructor.indexOf('href') == -1 && instructor != "TBA" && /^[A-Z]{3}\d{3}$/.test(courseID)) {
+		var instructors = $(this).html();
+		if (instructors.indexOf('href') == -1 && instructors != "TBA" && /^[A-Z]{3}\d{3}$/.test(courseID)) {
 			var campus = (campusID == 1) ? "St. George": "Mississauga";
-    		$(this).html("<a href='" + encodeURI("http://uoftprofs.com/?" + "instructor=" + instructor + "&course=" + courseID + "&campus=" + campus) + "'>" + instructor + "</a>");
-		}
+			var instructorList = instructors.split(', ');
+			var aArray = new Array(instructorList.length);
+			instructorList.forEach(function(instructor) {
+				aArray.push("<a href='" + encodeURI("http://uoftprofs.com/?" + "instructor=" + instructor + "&course=" + courseID + "&campus=" + campus) + "'>" + instructor + "</a>");
+			});
+    		$(this).html(aArray.reduce(function(x, y) {return x + ', ' + y;}));
+		}	
 	});
 }

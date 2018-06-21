@@ -1,7 +1,15 @@
-setInterval(function() {
+$('*').on('click', function() {
+	var startTime = new Date().getTime();
+	var interval = setInterval(function(){
+	if (new Date().getTime() - startTime > 10000) {
+		clearInterval(interval);
+		return;
+	}
 	setCourseList();
 	setCourseDialog();
-}, 1000);
+	}, 500);
+});
+
 
 function setCourseList() {
 	$('.courseBox.courseEnrolment').each(function() {
@@ -11,9 +19,8 @@ function setCourseList() {
 		var campusID = courseIDFull[courseIDFull.length - 1];
 		var instructorSelector = $('.instructor > .instructorDetails', $(this));
 		var instructor = instructorSelector.html();
-		if (instructor.indexOf('href') == -1 && /^[A-Z]{3}\d{3}$/.test(courseID)) {
+		if (instructor.indexOf('href') == -1 && instructor != "TBA" && /^[A-Z]{3}\d{3}$/.test(courseID)) {
 			var campus = (campusID == 1) ? "St. George": "Mississauga";
-			// console.log("<a href='" + encodeURI("http://uoftprofs.com/?" + "instructor=" + instructor + "&course=" + courseID + "&campus=" + campus) + "'>" + instructor + "</a>");
     		instructorSelector.html("<a href='" + encodeURI("http://uoftprofs.com/?" + "instructor=" + instructor + "&course=" + courseID + "&campus=" + campus) + "'>" + instructor + "</a>");
 		}
 	});
@@ -26,11 +33,9 @@ function setCourseDialog() {
 	var campusID = courseIDFull[courseIDFull.length - 1];
 	$('.searchResults > .primaryActivity > .activityRow > .instructor > .instructorDetails').each(function() {
 		var instructor = $(this).html();
-		if (instructor.indexOf('href') == -1 && /^[A-Z]{3}\d{3}$/.test(courseID)) {
+		if (instructor.indexOf('href') == -1 && instructor != "TBA" && /^[A-Z]{3}\d{3}$/.test(courseID)) {
 			var campus = (campusID == 1) ? "St. George": "Mississauga";
-			// console.log("<a href='" + encodeURI("http://uoftprofs.com/?" + "instructor=" + instructor + "&course=" + courseID + "&campus=" + campus) + "'>" + instructor + "</a>");
     		$(this).html("<a href='" + encodeURI("http://uoftprofs.com/?" + "instructor=" + instructor + "&course=" + courseID + "&campus=" + campus) + "'>" + instructor + "</a>");
 		}
 	});
-
 }

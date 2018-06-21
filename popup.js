@@ -1,8 +1,3 @@
-chrome.browserAction.onClicked.addListener(function(tab) {
-    chrome.tabs.create({'url': chrome.extension.getURL('open_page_name.html')}, function(tab) {
-        //tab opened
-    });
-});
 function encodeQueryData(data) {
    let ret = [];
    for (let d in data)

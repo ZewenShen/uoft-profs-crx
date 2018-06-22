@@ -19,7 +19,7 @@ $(function(){
 			};
 			chrome.notifications.create('limitNotif', notifOptions);
 		} else {
-			chrome.tabs.create({'url': 'http://172.105.219.80:3000/profanalysis?' + encodeQueryData(data)});
+			chrome.tabs.create({'url': 'http://uoftprofs.com?' + encodeQueryData(data)});
 		}
 	});
 });

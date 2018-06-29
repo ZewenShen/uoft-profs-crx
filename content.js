@@ -25,7 +25,7 @@ function setCourseList() {
 			var instructorList = instructors.split(', ');
 			var aArray = new Array(instructorList.length);
 			instructorList.forEach(function(instructor) {
-				aArray.push("<a href='" + encodeURI("http://uoftprofs.com/?" + "instructor=" + instructor + "&course=" + courseID + "&campus=" + campus) + "'>" + instructor + "</a>");
+				aArray.push("<a target='_blank' href='" + encodeURI("http://uoftprofs.com/?" + "instructor=" + instructor + "&course=" + courseID + "&campus=" + campus) + "'>" + instructor + "</a>");
 			})
     		instructorSelector.html(aArray.reduce(function(x, y) {return x + ', ' + y;}));
 		}
@@ -44,7 +44,7 @@ function setCourseDialogSummer() {
 			var instructorList = instructors.split(', ');
 			var aArray = new Array(instructorList.length);
 			instructorList.forEach(function(instructor) {
-				aArray.push("<a href='" + encodeURI("http://uoftprofs.com/?" + "instructor=" + instructor + "&course=" + courseID + "&campus=" + campus) + "'>" + instructor + "</a>");
+				aArray.push("<a target='_blank' href='" + encodeURI("http://uoftprofs.com/?" + "instructor=" + instructor + "&course=" + courseID + "&campus=" + campus) + "'>" + instructor + "</a>");
 			});
     		$(this).html(aArray.reduce(function(x, y) {return x + ', ' + y;}));
 		}	
@@ -62,7 +62,7 @@ function setCourseDialogFallWinter() {
 			var instructorList = instructors.split(', ');
 			var aArray = new Array(instructorList.length);
 			instructorList.forEach(function(instructor) {
-				aArray.push("<a href='" + encodeURI("http://uoftprofs.com/?" + "instructor=" + instructor + "&course=" + courseID + "&campus=" + campus) + "'>" + instructor + "</a>");
+				aArray.push("<a target='_blank' href='" + encodeURI("http://uoftprofs.com/?" + "instructor=" + instructor + "&course=" + courseID + "&campus=" + campus) + "'>" + instructor + "</a>");
 			});
     		$(this).html(aArray.reduce(function(x, y) {return x + ', ' + y;}));
 		}	
